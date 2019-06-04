@@ -30,28 +30,29 @@ int main(int argc, char **argv)
 
     list_of_numbers = argv;
 
-	// create a stack of capacity number of parameters
-    stack *pt = newStack(nb_parameters);
+	// create a stack a and b
+    stack *a = newStack(nb_parameters);
+    stack *b = newStack(nb_parameters);
 
 
     // add the list of numbers to the stack
-    add_parameters_to_stack(list_of_numbers, nb_parameters, pt);
+    add_parameters_to_stack(list_of_numbers, nb_parameters, a);
 
-    printf("Top element is %d\n", peek(pt));
-    printf("Stack size is %d\n", size(pt));
+    printf("Top element is %d\n", peek(a));
+    printf("Stack size is %d\n", size(a));
 
-    pop(pt);
-    pop(pt);
-
-	if (isEmpty(pt))
-	    printf("Stack is empty");
-	else
-		printf("Stack is not empty");
 
 
     //free malloc of array of trings (commands)
     free_memory(commands);
 
+    //push(b, 9);
+    //push(b, 8);
+    // sa(a);
+    // pop(a);
+        // printf("Top element is %d\n", peek(a));
+
+    sb(b);
 
     return 0;
 }

@@ -38,5 +38,11 @@ void add_parameters_to_stack(char **parameters, int nb_parameters, stack *pt); /
 
 void free_memory(char **commands);
 
+
+// All operations for stack a and b
+void swap(stack *a, stack *b);
+void sa(stack *a);
+void sb(stack *b);
+
 #endif
 

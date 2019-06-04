@@ -30,6 +30,12 @@ int isFull(stack *pt)
     return pt->top == pt->maxsize - 1;	// or return size(pt) == pt->maxsize;
 }
 
+
+
+
+
+/********************************************************************************/
+
 // Utility function to add an element x in the stack
 void push(stack *pt, int x)
 {
@@ -46,6 +52,7 @@ void push(stack *pt, int x)
 	// add an element and increments the top index
     pt->items[++pt->top] = x;
 }
+/********************************************************************************/
 
 // Utility function to return top element in a stack
 int peek(stack *pt)
@@ -56,6 +63,7 @@ int peek(stack *pt)
     else
         exit(EXIT_FAILURE);
 }
+/********************************************************************************/
 
 // Utility function to pop top element from the stack
 int pop(stack *pt)
@@ -72,3 +80,4 @@ int pop(stack *pt)
 	// decrement stack size by 1 and (optionally) return the popped element
     return pt->items[pt->top--];
 }
+/********************************************************************************/
