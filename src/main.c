@@ -48,9 +48,11 @@ int main(int argc, char **argv)
     //pa(a, b);
     //pb(a, b);
 
-    ra(a, b);
-    printf("Top element is %d\n", peek(a));
-    pop(a);
+    rb(a, b);
+    printf("Top element is %d\n", peek(b));
+        pop(b);
+
+    printf("Top element is %d\n", peek(b));
     // printf("Top element is %d\n", peek(a));
     // pop(a);
     // printf("Top element is %d\n", peek(a));

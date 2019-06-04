@@ -47,5 +47,7 @@ void ss(stack *a, stack *b);
 void pa(stack *a, stack *b);
 void pb(stack *a, stack *b);
 void ra(stack *a, stack *b);
+void rb(stack *a, stack *b);
+
 #endif
 

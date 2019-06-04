@@ -111,5 +111,9 @@ void ra(stack *a, stack *b)
                 push(a, top_a);
             }
         }
-    
+}
+
+void rb(stack *a, stack *b)
+{
+    ra(b, a);
 }
