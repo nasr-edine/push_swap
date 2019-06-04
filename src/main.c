@@ -41,18 +41,14 @@ int main(int argc, char **argv)
     printf("Top element is %d\n", peek(a));
     printf("Stack size is %d\n", size(a));
 
+    // sb(b);
+    push(b, 2);
+    push(b, 1);
+    ss(a, b);
 
 
     //free malloc of array of trings (commands)
     free_memory(commands);
-
-    //push(b, 9);
-    //push(b, 8);
-    // sa(a);
-    // pop(a);
-        // printf("Top element is %d\n", peek(a));
-
-    sb(b);
 
     return 0;
 }

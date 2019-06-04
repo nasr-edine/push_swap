@@ -56,3 +56,10 @@ void sb(stack *b)
 {
     sa(b);
 }
+
+
+void ss(stack *a, stack *b)
+{
+    sa(a);
+    sb(b);
+}
