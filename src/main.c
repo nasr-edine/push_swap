@@ -48,17 +48,17 @@ int main(int argc, char **argv)
     //pa(a, b);
     //pb(a, b);
 
-    rr(a, b);
+    // rr(a, b);
 
-        printf("Top element a is %d\n", peek(a));
-        pop(a);
+    //     printf("Top element a is %d\n", peek(a));
+    //     pop(a);
 
-    printf("Top element a is %d\n", peek(a));
+    // printf("Top element a is %d\n", peek(a));
 
-    printf("Top element b is %d\n", peek(b));
-        pop(b);
+    // printf("Top element b is %d\n", peek(b));
+    //     pop(b);
 
-    printf("Top element b is %d\n", peek(b));
+    // printf("Top element b is %d\n", peek(b));
     // printf("Top element is %d\n", peek(a));
     // pop(a);
     // printf("Top element is %d\n", peek(a));
@@ -67,6 +67,17 @@ int main(int argc, char **argv)
     // printf("Top element is %d\n", peek(a));
 
     //free malloc of array of trings (commands)
+
+    rra(a, b);
+    printf("Top element is %d\n", peek(a));
+    pop(a);
+    printf("Top element is %d\n", peek(a));
+    pop(a);
+    printf("Top element is %d\n", peek(a));
+    pop(a);
+    printf("Top element is %d\n", peek(a));
+
+
     free_memory(commands);
 
     return 0;

@@ -123,3 +123,38 @@ void rr(stack *a, stack *b)
     ra(a, b);
     rb(a, b);
 }
+
+void rra(stack *a, stack *b)
+{
+    int count = 0;
+    int current_element;
+int top_a =0;
+
+    	if (!isEmpty(a))
+        {
+             current_element = peek(a);
+            pop(a);
+            if (!isEmpty(a))
+            {
+                while(!isEmpty(a))
+                {
+                    push(b, current_element);
+
+                    current_element = peek(a);
+                    pop(a);
+                    count++;
+                }
+                 top_a = current_element;
+                while(count--)
+                {
+                    current_element = peek(b);
+                    pop(b);
+                    push(a, current_element);
+                } 
+                push(a, top_a); 
+            }
+            else {
+                push(a, top_a);
+            }
+        }
+}

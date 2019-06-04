@@ -49,6 +49,6 @@ void pb(stack *a, stack *b);
 void ra(stack *a, stack *b);
 void rb(stack *a, stack *b);
 void rr(stack *a, stack *b);
-
+void rra(stack *a, stack *b);
 #endif
 
