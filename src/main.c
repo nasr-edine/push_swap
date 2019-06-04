@@ -46,7 +46,17 @@ int main(int argc, char **argv)
      push(b, 1);
     // ss(a, b);
     //pa(a, b);
-    pb(a, b);
+    //pb(a, b);
+
+    ra(a, b);
+    printf("Top element is %d\n", peek(a));
+    pop(a);
+    // printf("Top element is %d\n", peek(a));
+    // pop(a);
+    // printf("Top element is %d\n", peek(a));
+
+    // pop(a);
+    // printf("Top element is %d\n", peek(a));
 
     //free malloc of array of trings (commands)
     free_memory(commands);

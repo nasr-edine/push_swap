@@ -79,3 +79,37 @@ void pb(stack *a, stack *b)
 {
     pa(b, a);
 }
+
+void ra(stack *a, stack *b)
+{
+    int count = 0;
+    int current_element;
+
+
+    	if (!isEmpty(a))
+        {
+            int top_a = peek(a);
+            pop(a);
+            if (!isEmpty(a))
+            {
+                while(!isEmpty(a))
+                {
+                    current_element = peek(a);
+                    pop(a);
+                    push(b, current_element);
+                    count++;
+                }
+                push(a, top_a);
+                while(count--)
+                {
+                    current_element = peek(b);
+                    pop(b);
+                    push(a, current_element);
+                }  
+            }
+            else {
+                push(a, top_a);
+            }
+        }
+    
+}
