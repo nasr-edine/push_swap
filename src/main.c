@@ -26,26 +26,26 @@ int main(int argc, char **argv)
     read_list_commands(commands);
 
     nb_parameters = argc - 1;
-    printf("Number of parameters is: %d\n", nb_parameters);
+    // printf("Number of parameters is: %d\n", nb_parameters);
 
     list_of_numbers = argv;
 
 	// create a stack a and b
-    stack *a = newStack(nb_parameters);
-    stack *b = newStack(nb_parameters);
+    stack *a = newStack(100);
+    stack *b = newStack(100);
 
 
     // add the list of numbers to the stack
     add_parameters_to_stack(list_of_numbers, nb_parameters, a);
 
-    printf("Top element is %d\n", peek(a));
-    printf("Stack size is %d\n", size(a));
+    // printf("Top element is %d\n", peek(a));
+    // printf("Stack size is %d\n", size(a));
 
     // sb(b);
-    push(b, 2);
-    push(b, 1);
-    ss(a, b);
-
+    // push(b, 2);
+    // push(b, 1);
+    // ss(a, b);
+    pa(a, b);
 
     //free malloc of array of trings (commands)
     free_memory(commands);
