@@ -10,13 +10,13 @@ void add_parameters_to_stack(char **parameters, int nb_parameters, stack *pt)
     {
         array[nb_parameters - i] = atoi (parameters[i]);
     }
-    printf("\n");
+   // printf("\n");
 
     for(i = 0; i < nb_parameters; i++)
     {
-        printf("%d\t", array[i]);
+        //printf("%d\t", array[i]);
         push(pt, array[i]);
 
     }
-        printf("\n");
+       // printf("\n");
 }

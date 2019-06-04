@@ -30,6 +30,18 @@ int isFull(stack *pt)
     return pt->top == pt->maxsize - 1;	// or return size(pt) == pt->maxsize;
 }
 
+// Utility function to print the stack
+int print_stack(stack *pt)
+{
+        stack new_pt = *pt;
+
+while(!isEmpty(&new_pt)) {
+    int top_a = peek(&new_pt);
+        printf("%d\n", top_a);
+    pop(&new_pt);
+}    
+    return 0;
+}
 
 
 
@@ -47,7 +59,7 @@ void push(stack *pt, int x)
         exit(EXIT_FAILURE);
     }
 
-	printf("Inserting %d\n", x);
+	//printf("Inserting %d\n", x);
 	
 	// add an element and increments the top index
     pt->items[++pt->top] = x;
@@ -75,7 +87,7 @@ int pop(stack *pt)
         exit(EXIT_FAILURE);
     }
 
-    printf("Removing %d\n", peek(pt));
+    //printf("Removing %d\n", peek(pt));
 
 	// decrement stack size by 1 and (optionally) return the popped element
     return pt->items[pt->top--];

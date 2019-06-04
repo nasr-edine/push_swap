@@ -32,21 +32,26 @@ int main(int argc, char **argv)
 
 	// create a stack a and b
     stack *a = newStack(100);
-    stack *b = newStack(100);
+     stack *b = newStack(100);
 
 
     // add the list of numbers to the stack
     add_parameters_to_stack(list_of_numbers, nb_parameters, a);
 
+
+ print_stack(a);
+     //printf("Top element is %d\n", peek(a));
+
+    execute_commands(commands, a, b);
     // printf("Top element is %d\n", peek(a));
     // printf("Stack size is %d\n", size(a));
 
     // sb(b);
      //push(b, 4);
-     push(b, 3);     
-     push(b, 2);
-     push(b, 1);
-    // ss(a, b);
+    //  push(b, 3);     
+    //  push(b, 2);
+    //  push(b, 1);
+    // // ss(a, b);
     //pa(a, b);
     //pb(a, b);
 
@@ -79,21 +84,21 @@ int main(int argc, char **argv)
     // pop(b);
     //printf("Top element is %d\n", peek(b));
 
-    rrr(a, b);
+    // rrr(a, b);
 
-    printf("Top element a is %d\n", peek(a));
-    pop(a);
-    printf("Top element a is %d\n", peek(a));
-    pop(a);
-    printf("Top element a is %d\n", peek(a));
-    pop(a);
+    // printf("Top element a is %d\n", peek(a));
+    // pop(a);
+    // printf("Top element a is %d\n", peek(a));
+    // pop(a);
+    // printf("Top element a is %d\n", peek(a));
+    // pop(a);
 
-    printf("Top element b is %d\n", peek(b));
-    pop(b);
-    printf("Top element b is %d\n", peek(b));
-    pop(b);
-    printf("Top element b is %d\n", peek(b));
-    pop(b);
+    // printf("Top element b is %d\n", peek(b));
+    // pop(b);
+    // printf("Top element b is %d\n", peek(b));
+    // pop(b);
+    // printf("Top element b is %d\n", peek(b));
+    // pop(b);
 
 
     free_memory(commands);

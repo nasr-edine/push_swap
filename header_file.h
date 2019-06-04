@@ -32,6 +32,7 @@ int isFull(stack *pt);
 void push(stack *pt, int x);
 int peek(stack *pt);
 int pop(stack *pt);
+int print_stack(stack *pt);
 
 char ** reading_stdin(); // Reading stdin and save the commands
 void add_parameters_to_stack(char **parameters, int nb_parameters, stack *pt); // Add list of numbers to the stack
@@ -52,6 +53,8 @@ void rr(stack *a, stack *b);
 void rra(stack *a, stack *b);
 void rrb(stack *a, stack *b);
 void rrr(stack *a, stack *b);
+
+void execute_commands(char **commands, stack *a, stack *b);
 
 #endif
 
