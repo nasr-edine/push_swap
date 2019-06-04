@@ -43,7 +43,7 @@ int main(int argc, char **argv)
 
     // sb(b);
      //push(b, 4);
-     //push(b, 3);     
+     push(b, 3);     
      push(b, 2);
      push(b, 1);
     // ss(a, b);
@@ -70,14 +70,30 @@ int main(int argc, char **argv)
 
     //free malloc of array of trings (commands)
 
-    rrb(a, b);
-    printf("Top element is %d\n", peek(b));
-    pop(b);
-    printf("Top element is %d\n", peek(b));
-    pop(b);
-    printf("Top element is %d\n", peek(b));
-    pop(b);
+    // rrb(a, b);
+    // printf("Top element is %d\n", peek(b));
+    // pop(b);
+    // printf("Top element is %d\n", peek(b));
+    // pop(b);
+    // printf("Top element is %d\n", peek(b));
+    // pop(b);
     //printf("Top element is %d\n", peek(b));
+
+    rrr(a, b);
+
+    printf("Top element a is %d\n", peek(a));
+    pop(a);
+    printf("Top element a is %d\n", peek(a));
+    pop(a);
+    printf("Top element a is %d\n", peek(a));
+    pop(a);
+
+    printf("Top element b is %d\n", peek(b));
+    pop(b);
+    printf("Top element b is %d\n", peek(b));
+    pop(b);
+    printf("Top element b is %d\n", peek(b));
+    pop(b);
 
 
     free_memory(commands);

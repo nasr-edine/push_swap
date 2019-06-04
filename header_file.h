@@ -51,6 +51,7 @@ void rb(stack *a, stack *b);
 void rr(stack *a, stack *b);
 void rra(stack *a, stack *b);
 void rrb(stack *a, stack *b);
+void rrr(stack *a, stack *b);
 
 #endif
 
