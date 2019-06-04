@@ -1,5 +1,5 @@
 #include "../header_file.h"
-
+// la fonction ne boucle pas sur tous les instructions seulement la 1ere peut etre a cause de mon print_stack
 void execute_commands(char **commands, stack *a, stack *b)
 {
 
