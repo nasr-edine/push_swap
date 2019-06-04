@@ -117,3 +117,9 @@ void rb(stack *a, stack *b)
 {
     ra(b, a);
 }
+
+void rr(stack *a, stack *b)
+{
+    ra(a, b);
+    rb(a, b);
+}
