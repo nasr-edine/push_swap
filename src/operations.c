@@ -128,7 +128,7 @@ void rra(stack *a, stack *b)
 {
     int count = 0;
     int current_element;
-int top_a =0;
+    int top_a =0;
 
     	if (!isEmpty(a))
         {
@@ -157,4 +157,9 @@ int top_a =0;
                 push(a, top_a);
             }
         }
+}
+
+void rrb(stack *a, stack *b)
+{
+    rra(b, a);
 }
