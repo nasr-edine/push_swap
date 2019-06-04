@@ -42,10 +42,11 @@ int main(int argc, char **argv)
     // printf("Stack size is %d\n", size(a));
 
     // sb(b);
-    // push(b, 2);
-    // push(b, 1);
+     push(b, 2);
+     push(b, 1);
     // ss(a, b);
-    pa(a, b);
+    //pa(a, b);
+    pb(a, b);
 
     //free malloc of array of trings (commands)
     free_memory(commands);

@@ -62,22 +62,20 @@ void ss(stack *a, stack *b)
 
 void pa(stack *a, stack *b)
 {
-
-
     	if (!isEmpty(b))
         {
-            // int top_a = peek(a);
             int top_b = peek(b);
-
-                 printf("before Top element in stack a is %d\n", peek(a));
-                 printf("before Top element in stack b is %d\n", peek(b));
-
+                 printf("before Top element in stack is %d\n", peek(a));
+                 printf("before Top element in stack is %d\n", peek(b));
             pop(b);
             push(a, top_b);
 
-                 printf("after Top element in stack a is %d\n", peek(a));
-                 printf("after Top element in stack b is %d\n", peek(b));
-
-
+                 printf("after Top element in stack is %d\n", peek(a));
+                 printf("after Top element in stack is %d\n", peek(b));
         }
+}
+
+void pb(stack *a, stack *b)
+{
+    pa(b, a);
 }
