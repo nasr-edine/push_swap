@@ -4,7 +4,7 @@ char ** reading_stdin()
 {
     char buf[BUF_SIZE];
     int num_read = 1;
-    int nb_commands = 0, i = 0;
+    int nb_commands = 0;
     char** stringArray;
 
     //get input for the number of strings

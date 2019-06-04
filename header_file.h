@@ -3,7 +3,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <unistd.h> // for read function
+#include <string.h> // for strcpy function
 #define _GNU_SOURCE
 #include <dlfcn.h>
 
@@ -34,5 +35,8 @@ int pop(stack *pt);
 
 char ** reading_stdin(); // Reading stdin and save the commands
 void add_parameters_to_stack(char **parameters, int nb_parameters, stack *pt); // Add list of numbers to the stack
+
+void free_memory(char **commands);
+
 #endif
 

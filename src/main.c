@@ -1,6 +1,6 @@
 #include "../header_file.h"
 
-read_list_commands(char **commands)
+void read_list_commands(char **commands)
 {
     int i = 0;
     

@@ -1,19 +1,23 @@
 CC=gcc
-CFLAGS=-W -Wall -ansi -pedantic
-EXEC=checker
+CFLAGS=-Wall -Wextra -Werror
+NAME=checker
 SRC= $(wildcard src/*.c)
 OBJ= $(SRC:.c=.o)
 
-all: $(EXEC)
+all: $(NAME)
 
-checker: $(OBJ)
+$(NAME): $(OBJ)
 	$(CC) -o $@ $^
 
 %.o: %.c
 	$(CC) -o $@ -c $< $(CFLAGS)
 
 clean:
-	rm -rf *.o
+	rm -f $(OBJ)
 
 fclean: clean
-	rm -rf checker
+	rm -rf $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re
