@@ -8,7 +8,7 @@ char ** reading_stdin()
     char** stringArray;
 
     //get input for the number of strings
-    stringArray = malloc(sizeof(char*)* 10);
+    stringArray = malloc(100 * sizeof(char*));
 
     // reading standard input
     while(num_read > 0)

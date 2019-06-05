@@ -16,6 +16,7 @@ void print_instructions(char **commands)
 // main function
 int main(int argc, char **argv)
 {
+    printf("start\n");
     char **commands;
     int nb_parameters;
     char **list_of_numbers;
@@ -39,17 +40,22 @@ int main(int argc, char **argv)
 
     execute_commands(commands, a, b);
 
-    // check for empty stack
-    if (isEmpty(b))
-        printf("stack b is empty\n");
-    else
-        printf("stack b is not empty\n");
+    // // check for empty stack
+    // if (isEmpty(b))
+    //     printf("stack b is empty\n");
+    // else
+    //     printf("stack b is not empty\n");
 
-    // check if stack is sort
-    if (!is_stack_sort(a))
-        printf("stack a is sorted\n");
+    // // check if stack is sort
+    // if (!is_stack_sort(a))
+    //     printf("stack a is sorted\n");
+    // else
+    //     printf("stack a is not sorted\n");
+
+    if (isEmpty(b) && !is_stack_sort(a))
+        printf("OK\n");
     else
-        printf("stack a is not sorted\n");
+        printf("KO\n");
 
     free_memory(commands);
 
