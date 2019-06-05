@@ -57,6 +57,5 @@ void execute_commands(char **commands, stack *a, stack *b)
                         exit(EXIT_FAILURE);
                 }
                 i++;
-                //print_stack(a);
         }
 }

@@ -55,6 +55,7 @@ void rrb(stack *a, stack *b);
 void rrr(stack *a, stack *b);
 
 void execute_commands(char **commands, stack *a, stack *b);
+int  is_stack_sort(stack *s);
 
 #endif
 
