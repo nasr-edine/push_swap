@@ -10,8 +10,8 @@
 
 #define BUF_SIZE 10
 
-#define malloc(x) debug_malloc(x,__FILE__,__LINE__)
-#define free(x) debug_free(x,__FILE__,__LINE__)
+// #define malloc(x) debug_malloc(x,__FILE__,__LINE__)
+// #define free(x) debug_free(x,__FILE__,__LINE__)
 
 // Data structure for stack
 typedef struct stacks

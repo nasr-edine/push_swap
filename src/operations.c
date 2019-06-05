@@ -26,7 +26,8 @@ void swap(stack *a, stack *b)
 
 void sa(stack *a)
 {
-    printf("before Top element in stack a is %d\n", peek(a));
+    printf("\n/*****************************/\n");
+    //printf("before %d\n", peek(a));
 
 
     	if (!isEmpty(a))
@@ -45,7 +46,7 @@ void sa(stack *a)
                 push(a, top_first);
             }
         }
-        printf("after Top element in stack a is %d\n", peek(a));
+        printf("%d\n", peek(a));
 }
 
 void sb(stack *b)
@@ -62,16 +63,19 @@ void ss(stack *a, stack *b)
 
 void pa(stack *a, stack *b)
 {
+    printf("\n/*****************************/\n");
     	if (!isEmpty(b))
         {
+
             int top_b = peek(b);
-                 printf("before Top element in stack is %d\n", peek(a));
-                 printf("before Top element in stack is %d\n", peek(b));
+                //  printf("before Top element in stack is %d\n", peek(a));
+                  //printf("[%d]\n", top_b);
+
             pop(b);
             push(a, top_b);
 
-                 printf("after Top element in stack is %d\n", peek(a));
-                 printf("after Top element in stack is %d\n", peek(b));
+                 printf("%d\n", peek(a));
+                 //printf("after Top element in stack is %d\n", peek(b));
         }
 }
 
@@ -82,9 +86,9 @@ void pb(stack *a, stack *b)
 
 void ra(stack *a, stack *b)
 {
+    printf("\n/*****************************/\n");
     int count = 0;
     int current_element;
-
 
     	if (!isEmpty(a))
         {
@@ -111,6 +115,7 @@ void ra(stack *a, stack *b)
                 push(a, top_a);
             }
         }
+        printf("%d\n", peek(a));
 }
 
 void rb(stack *a, stack *b)
@@ -126,6 +131,7 @@ void rr(stack *a, stack *b)
 
 void rra(stack *a, stack *b)
 {
+    printf("\n/*****************************/\n");
     int count = 0;
     int current_element;
     int top_a =0;
@@ -157,6 +163,7 @@ void rra(stack *a, stack *b)
                 push(a, top_a);
             }
         }
+        printf("%d\n", peek(a));
 }
 
 void rrb(stack *a, stack *b)

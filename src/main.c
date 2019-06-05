@@ -1,15 +1,16 @@
 #include "../header_file.h"
 
-void read_list_commands(char **commands)
+void print_instructions(char **commands)
 {
     int i = 0;
     
+    printf("list instructions: ");
     while(commands[i] != NULL )
     {
-        printf("[%s]\t", commands[i]);
+        printf("[%s]", commands[i]);
         i++;
     }
-    printf("\n");
+    printf("\n\n");
 }
 
 // main function
@@ -22,8 +23,8 @@ int main(int argc, char **argv)
     // reading of the commands in stdin
     commands = reading_stdin();
 
-    // Put commands
-    read_list_commands(commands);
+    // print instructions
+    print_instructions(commands);
 
     nb_parameters = argc - 1;
     // printf("Number of parameters is: %d\n", nb_parameters);
@@ -32,17 +33,18 @@ int main(int argc, char **argv)
 
 	// create a stack a and b
     stack *a = newStack(100);
-     stack *b = newStack(100);
-
+    stack *b = newStack(100);
 
     // add the list of numbers to the stack
     add_parameters_to_stack(list_of_numbers, nb_parameters, a);
 
 
- print_stack(a);
+//  print_stack(a);
      //printf("Top element is %d\n", peek(a));
 
     execute_commands(commands, a, b);
+    print_stack(a);
+
     // printf("Top element is %d\n", peek(a));
     // printf("Stack size is %d\n", size(a));
 

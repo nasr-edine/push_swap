@@ -33,13 +33,15 @@ int isFull(stack *pt)
 // Utility function to print the stack
 int print_stack(stack *pt)
 {
-        stack new_pt = *pt;
-
-while(!isEmpty(&new_pt)) {
-    int top_a = peek(&new_pt);
-        printf("%d\n", top_a);
-    pop(&new_pt);
-}    
+    stack new_pt = *pt;
+    printf("print stack: ");
+    while(!isEmpty(&new_pt)) 
+    {
+        int top_a = peek(&new_pt);
+        printf("[%d]", top_a);
+        pop(&new_pt);
+    }    
+    printf("\n");
     return 0;
 }
 
