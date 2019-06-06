@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <unistd.h> // for read function
 #include <string.h> // for strcpy function
+#include <ctype.h> // for isdigit
 #define _GNU_SOURCE
 #include <dlfcn.h>
 
