@@ -53,7 +53,7 @@ void execute_commands(char **commands, stack *a, stack *b)
                 }
                 else /* default: */
                 {
-                        printf("Invalid operations\n" );
+                        printf("Error\n");
                         exit(EXIT_FAILURE);
                 }
                 i++;
