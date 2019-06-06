@@ -1,4 +1,5 @@
 #include "../header_file.h"
+#include<limits.h> 
 
 void printRepeating(int arr[], int size) 
 { 
@@ -13,7 +14,6 @@ void printRepeating(int arr[], int size)
       }
 }      
   
-
 // add parameters to the stack function
 void add_parameters_to_stack(char **parameters, int nb_parameters, stack *pt)
 {
@@ -22,11 +22,23 @@ void add_parameters_to_stack(char **parameters, int nb_parameters, stack *pt)
 
     for(i = 1; i <= nb_parameters; i++)
     {
-        int num;
+        long num;
  
-        num = atoi(parameters[i]);
+        num = atol(parameters[i]);
+        printf("[%ld]\n", num);
+
+        // check if number overflow int
+        if( num > INT_MAX || num < INT_MIN ) 
+        {
+            printf("Error\n");
+            printf("overflow int\n");
+            exit(EXIT_FAILURE);
+        }
+
+
         if (num == 0 && parameters[i][0] != '0')
         {
+            printf("Error\n");
             printf("Not a Number!");
             exit(EXIT_FAILURE);
         }
