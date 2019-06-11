@@ -37,5 +37,8 @@ int print_stack(stack *pt);
 
 void add_parameters_to_stack(char **parameters, int nb_parameters, stack *pt); // Add list of numbers to the stack
 
+
+int  is_stack_sort(stack *s);
+
 #endif
 
