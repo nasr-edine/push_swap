@@ -176,10 +176,10 @@ int main(int argc, char **argv)
     push(a, 10);
     push(a, 14);
     push(a, 37);
-    push(a, 14);
+    push(a, 15);
     //push(a, 2);
     
-    int array[5] = {29, 10, 14, 37, 14};
+    int array[5] = {29, 10, 14, 37, 15};
     print_stack(a);     
 
     // int swap;
@@ -205,10 +205,12 @@ int main(int argc, char **argv)
     // int current;
     
     int size_stack = size(a);
-    for(size_t i = 0; i < size_stack; i++)
-    {
+    int count_operations = 0;
+    
+ while(!isEmpty(a) && size_stack != 0 )
+ {
         while(!isEmpty(a)){
-        current = peek(a);
+                    current = peek(a);
         pop(a);
         printf("[%d]", current);
         printf("[%d]", peek(a));
@@ -221,6 +223,7 @@ int main(int argc, char **argv)
             push(a, current);
             printf(">\n");
             sa(a);
+            count_operations++;
             current = peek(a);
         }
         else
@@ -229,10 +232,19 @@ int main(int argc, char **argv)
             push(temp, current);
         }
     }
+    
+    while(!isEmpty(temp)){
+        push(a, peek(temp));
+        pop(temp);
     }
+    size_stack--;
+ }
+     
+    
     printf("t\n\n");
     print_stack(a);
     print_stack(temp);
+    printf("number operations: %d", count_operations);
 
 
 
