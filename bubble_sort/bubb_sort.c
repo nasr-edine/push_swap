@@ -60,7 +60,8 @@ int peek(stack *pt)
     if (!isEmpty(pt))
         return pt->items[pt->top];
     else
-        exit(EXIT_FAILURE);
+        // exit(EXIT_FAILURE);
+        return 0;
 }
 
 // Utility function to return the size of the stack
@@ -113,6 +114,53 @@ void push(stack *pt, int x)
 	// add an element and increments the top index
     pt->items[++pt->top] = x;
 }
+void sa(stack *a)
+{
+    printf("\n/*****************************/\n");
+    //printf("before %d\n", peek(a));
+
+
+    	if (!isEmpty(a))
+        {
+            int top_first = peek(a);
+            pop(a);
+            if (!isEmpty(a))
+            {
+                int top_second = peek(a);
+                pop(a);
+                push(a, top_first);
+                push(a, top_second);
+                
+            }
+            else {
+                push(a, top_first);
+            }
+        }
+        printf("%d\n", peek(a));
+}
+
+void pa(stack *a, stack *b)
+{
+    // printf("\n/*****************************/\n");
+    	if (!isEmpty(b))
+        {
+
+            int top_b = peek(b);
+                //  printf("before Top element in stack is %d\n", peek(a));
+                  //printf("[%d]\n", top_b);
+
+            pop(b);
+            push(a, top_b);
+
+                //  printf("%d\n", peek(a));
+                 //printf("after Top element in stack is %d\n", peek(b));
+        }
+}
+
+void pb(stack *a, stack *b)
+{
+    pa(b, a);
+}
 
 /********************************************************************************/
 
@@ -124,35 +172,76 @@ int main(int argc, char **argv)
     stack *b = newStack(100);
     stack *temp = newStack(100);
 
-    push(a, 8);
-    push(a, 5);
-    push(a, 6);
-    push(a, 3);
-    push(a, 1);
-    push(a, 2);
+    push(a, 29);
+    push(a, 10);
+    push(a, 14);
+    push(a, 37);
+    push(a, 14);
+    //push(a, 2);
     
     int array[5] = {29, 10, 14, 37, 14};
     print_stack(a);     
 
+    // int swap;
+    // for(size_t i = 0; i < 4; i++)
+    // {
+
+    //     for(size_t j = i + 1; j < 5; j++)
+    //     {
+    //         if (array[i] > array[j]) 
+    //         {
+    //             swap = array[i];
+    //             array[i] = array[j];
+    //             array[j] = swap;
+    //         }
+    //     }    
+    // }
     
-    int swap;
-    for(size_t i = 0; i < 4; i++)
+    // for(size_t i = 0; i < 5; i++)
+    // {
+    //     printf("[%d]", array[i]);
+    // }
+
+    // int current;
+    
+    int size_stack = size(a);
+    for(size_t i = 0; i < size_stack; i++)
     {
-        for(size_t j = i + 1; j < 5; j++)
+        while(!isEmpty(a)){
+        current = peek(a);
+        pop(a);
+        printf("[%d]", current);
+        printf("[%d]", peek(a));
+        
+        if (peek(a) == 0) {
+            push(temp, current);
+            break;
+        }
+        if (current > peek(a)) {
+            push(a, current);
+            printf(">\n");
+            sa(a);
+            current = peek(a);
+        }
+        else
         {
-            if (array[i] > array[j]) 
-            {
-                swap = array[i];
-                array[i] = array[j];
-                array[j] = swap;
-            }
-        }    
+            printf("<\n");
+            push(temp, current);
+        }
     }
-    
-    for(size_t i = 0; i < 5; i++)
-    {
-        printf("[%d]", array[i]);
     }
-    
+    printf("t\n\n");
+    print_stack(a);
+    print_stack(temp);
+
+
+
+
+
+
+
+
+
+
     return 0;
 }
