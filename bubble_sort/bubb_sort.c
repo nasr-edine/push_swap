@@ -172,12 +172,12 @@ int main(int argc, char **argv)
     stack *b = newStack(100);
     stack *temp = newStack(100);
 
-    push(a, 29);
     push(a, 10);
+    push(a, 29);
     push(a, 14);
     push(a, 37);
     push(a, 15);
-    //push(a, 2);
+    push(a, 2);
     
     int array[5] = {29, 10, 14, 37, 15};
     print_stack(a);     
@@ -207,35 +207,33 @@ int main(int argc, char **argv)
     int size_stack = size(a);
     int count_operations = 0;
     
- while(!isEmpty(a) && size_stack != 0 )
+ while(size_stack != 0 )
  {
         while(!isEmpty(a)){
-                    current = peek(a);
-        pop(a);
-        printf("[%d]", current);
-        printf("[%d]", peek(a));
+        pb(a, b);
+        count_operations++;
+
+        // printf("[%d]", peek(b));
+        // printf("[%d]", peek(a));
         
-        if (peek(a) == 0) {
-            push(temp, current);
-            break;
-        }
-        if (current > peek(a)) {
-            push(a, current);
-            printf(">\n");
+        if (peek(b) > peek(a)) {
+            pa(a,b);
+            count_operations++;
             sa(a);
             count_operations++;
-            current = peek(a);
+            pa(a,b);
+            count_operations++;
         }
         else
         {
-            printf("<\n");
-            push(temp, current);
+            count_operations++;
+            pb(a, b);
         }
     }
     
-    while(!isEmpty(temp)){
-        push(a, peek(temp));
-        pop(temp);
+    while(!isEmpty(b)){
+        count_operations++;
+        pa(a,b);
     }
     size_stack--;
  }
