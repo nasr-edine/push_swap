@@ -116,7 +116,7 @@ void push(stack *pt, int x)
 }
 void sa(stack *a)
 {
-    printf("\n/*****************************/\n");
+    // printf("\n/*****************************/\n");
     //printf("before %d\n", peek(a));
 
 
@@ -136,7 +136,7 @@ void sa(stack *a)
                 push(a, top_first);
             }
         }
-        printf("%d\n", peek(a));
+        // printf("%d\n", peek(a));
 }
 
 void pa(stack *a, stack *b)
@@ -172,14 +172,35 @@ int main(int argc, char **argv)
     stack *b = newStack(100);
     stack *temp = newStack(100);
 
-    push(a, 10);
-    push(a, 29);
-    push(a, 14);
-    push(a, 37);
-    push(a, 15);
-    push(a, 2);
     
-    int array[5] = {29, 10, 14, 37, 15};
+    for(size_t i = argc - 1; i > 0; i--)
+    {
+        push(a, atoi(argv[i]));
+    }
+    
+    // push(a, 3);
+    // push(a, 2);
+    // push(a, 1);
+    // push(a, 0);
+
+
+    // push(a, 8);
+    // push(a, 5);
+    // push(a, 6);
+    // push(a, 3);
+    // push(a, 1);
+    // push(a, 2);
+    
+    //     push(a, 2);
+    // push(a, 1);
+    //  push(a, 3);
+    //  push(a, 5);
+    //  push(a, 4);
+
+
+    int array[5] = {3, 1, 2};
+    // 1 3 2 . 1 2 3
+    // int array[5] = {29, 10, 14, 37, 15};
     print_stack(a);     
 
     // int swap;
@@ -205,41 +226,87 @@ int main(int argc, char **argv)
     // int current;
     
     int size_stack = size(a);
+    int size_stack2 = size(a);
     int count_operations = 0;
-    
- while(size_stack != 0 )
- {
-        while(!isEmpty(a)){
-        pb(a, b);
-        count_operations++;
+    int count_loop = 0;
 
-        // printf("[%d]", peek(b));
-        // printf("[%d]", peek(a));
-        
-        if (peek(b) > peek(a)) {
-            pa(a,b);
-            count_operations++;
-            sa(a);
-            count_operations++;
-            pa(a,b);
-            count_operations++;
-        }
-        else
+    int sort = 0;
+
+ while(size_stack > 1 )
+ {
+     sort = 0;
+        printf("loop number %d: \n", count_loop++);
+        // printf("b:[%d]", peek(b));
+        // printf(" a:[%d]\n", peek(a));
+
+        size_stack2 = size(a);
+        while(size_stack2 > 1)
         {
-            count_operations++;
-            pb(a, b);
+            // move from a to b
+            current = peek(a);
+            pop(a);
+            // pb(a, b);
+            // printf("pb\n");
+            // compare the top element int b with the top element in a
+            if (current > peek(a)) 
+            {
+                sort = 1;
+                // printf("b:[%d]", peek(b));
+                // printf(" a:[%d]\n", peek(a));
+
+                // move from b to a
+                push(a, current);
+
+                // pa(a,b);
+                // printf("pa\n");
+                // count_operations++;
+
+                // swap 2 elements in a
+                sa(a);
+                printf("sa\n");
+                count_operations++;
+
+
+                pb(a,b);
+                printf("pb\n");
+                count_operations++;
+                
+
+                // printf("pb\n");
+                // count_operations++;
+            }
+            
+            else
+            {
+                push(a, current);
+                pb(a,b);
+                                count_operations++;
+
+                printf("pb\n");
+            }
+            
+            
+            // current = peek(a);
+            size_stack2--;
         }
-    }
     
-    while(!isEmpty(b)){
-        count_operations++;
-        pa(a,b);
-    }
-    size_stack--;
+        while(!isEmpty(b))
+        {
+            pa(a,b);
+            printf("pa\n");
+             //count_operations++;
+        }
+        
+        if (sort == 0) {
+            break;
+        }
+        
+        size_stack--;
  }
      
     
-    printf("t\n\n");
+
+    printf("\n\n");
     print_stack(a);
     print_stack(temp);
     printf("number operations: %d", count_operations);
